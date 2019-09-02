@@ -186,8 +186,6 @@ public class CreateQuad : ScriptableWizard
                 mesh.RecalculateBounds();
                 plane.AddComponent(typeof(BoxCollider));
                 #endregion
-
-
         }
         #endregion
 }

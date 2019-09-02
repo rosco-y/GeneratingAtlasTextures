@@ -9,12 +9,12 @@ public class BatchRename : ScriptableWizard
         public string BaseName = "MyObject_";
         public int StartNumber = 0;
         public int Increment = 1;
-        Random _rnd;        
+        //Random _rnd;        
 
         [MenuItem("Edit/Chapter 4/Batch Rename...")]
         static void CreateWizard()
         {
-                ScriptableWizard.DisplayWizard("Batch Rename", typeof(BatchRename), "Rename");
+                DisplayWizard("Batch Rename", typeof(BatchRename), "Rename");
         }
 
         // called when the window first appears
@@ -23,12 +23,9 @@ public class BatchRename : ScriptableWizard
                 UpdateSelectionHelper();
         }
 
-        private void OnSelectionChange()
-        {
-                UpdateSelectionHelper();
-        }
+        private void OnSelectionChange() => UpdateSelectionHelper();
 
-        void UpdateSelectionHelper()
+        private void UpdateSelectionHelper()
         {
                 helpString = "";
                 if (Selection.objects != null)
